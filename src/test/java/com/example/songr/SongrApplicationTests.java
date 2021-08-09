@@ -20,7 +20,12 @@ class SongrApplicationTests {
 		assertEquals(70 , album.getSongCount());
 		assertEquals(200 , album.getLength());
 		assertEquals("https://image.jpg" , album.getImageUrl());
-
 	}
 
+	@Test
+	void settersTesting(){
+		Album album = new Album("Thriller" , "Michael Jackson", 70 , 200 , "https://image.jpg");
+		album.setArtist("Ahmad");
+		assertEquals("Ahmad", album.getArtist());
+	}
 }
