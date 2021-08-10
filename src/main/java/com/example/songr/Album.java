@@ -1,11 +1,13 @@
 package com.example.songr;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+
 public class Album {
 
     @Id
@@ -50,8 +52,9 @@ public class Album {
         return artist;
     }
 
-    public void setArtist(String artist) {
+    public String setArtist(String artist) {
         this.artist = artist;
+        return this.artist;
     }
 
     public int getSongCount() {
