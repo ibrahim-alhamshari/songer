@@ -1,7 +1,5 @@
 package com.example.songr;
 
-import java.net.URL;
-
 public class Album {
     private String title;
     private String artist;
@@ -29,8 +27,9 @@ public class Album {
         return artist;
     }
 
-    public void setArtist(String artist) {
+    public String setArtist(String artist) {
         this.artist = artist;
+        return this.artist;
     }
 
     public int getSongCount() {
