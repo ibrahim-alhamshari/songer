@@ -42,7 +42,7 @@ public class AlbomController {
     public RedirectView saveToDataBase(@ModelAttribute Album album , Model model){
        model.addAttribute("album", album );
       albumInterface.save(album);
-        System.out.println("====================="+album.getId());
+//        System.out.println("====================="+album.getId());
         return new RedirectView("/albums");
     }
 }
