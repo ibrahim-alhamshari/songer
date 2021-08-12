@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" th:href="@{/style.css}">
+  <link rel="stylesheet" th:href="header.css">
+</head>
+<body>
+<header>
+  <a href="/">Home page</a>
+  <a href="hello"> Hello </a>
+  <a href="dataForm">Add Album or Song</a>
+  <a href="albums"> Albums </a>
+  <a href="allSongs">All songs</a>
+    </header>
+
+    <main>
+    <div th:each="Song: ${listSongs}" >
+      <h2>Album: <span th:text="${Song.albumForSong}"></span></h2>
+      <h3>Song title: <span th:text="${Song.title}"></span></h3>
+      <h3>length: <span th:text="${Song.length}"></span></h3>
+      <h3>trackNumber: <span th:text="${Song.trackNumber}"></span></h3>
+      <hr>
+    </div>
+<!--      <div th:each="Album: ${listAlbumFinal}">-->
+<!--        <h2>Album title: <span th:text="${Album.title}"></span></h2>-->
+<!--        <h3>Artist: <span th:text="${Album.artist}"></span></h3>-->
+<!--        <p>SongCount: <span th:text="${Album.songCount}"></span></p>-->
+<!--        <p>length : <span th:text="${Album.length}"></span></p>-->
+<!--        <img th:src=${Album.imageUrl} th:alt="${Album.title}" />-->
+<!--      </div>-->
+
+    </main>
+
+    <footer> &copy; 2021</footer>
+    </body>
+    </html>
