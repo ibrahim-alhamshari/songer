@@ -11,4 +11,3 @@
 6. `/allSongs`: This will take you to a page that has all songs you added.
 
 > ***Note: When you add a new album or a new song, it will be added to the database(`SQL`) firstly, then when you visit any route, the application will call the data from the database and generate it to you.***
-

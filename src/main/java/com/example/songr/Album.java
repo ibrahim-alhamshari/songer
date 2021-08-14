@@ -1,3 +1,4 @@
+
 package com.example.songr;
 
 import javax.persistence.*;
@@ -86,3 +87,4 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 }
+
