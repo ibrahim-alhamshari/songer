@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class Capetalize {
 
-    @GetMapping("/capetalize/{cap}")
+    @GetMapping("/capitalize/{cap}")
     public String getCapetalize(Model model , @PathVariable String cap){
 
         model.addAttribute("cap" ,cap.toUpperCase() );

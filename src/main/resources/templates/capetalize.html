@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/style.css}">
-    <link rel="stylesheet" th:href="header.css">
+    <link rel="stylesheet" th:href="@{/header.css}">
+    <link rel="stylesheet" th:href="@{/footer.css}">
 </head>
 <body>
 <header>
@@ -14,6 +15,11 @@
     <a href="albums"> Albums </a>
     <a href="allSongs">All songs</a>
 </header>
-<div th:text="${cap}" />
+<main>
+    <div th:text="${cap}" />
+</main>
+<footer>
+    &copy; 2021, Ibrahim_Alhamshari
+</footer>
 </body>
 </html>
