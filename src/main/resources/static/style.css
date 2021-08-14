@@ -3,11 +3,11 @@ main{
 text-align: center;
 }
 
-footer{
-margin-top:1%;
-text-align: center;
-}
 hr{
-width:2px
-background-color: red;
+width:80%;
+background-color: black;
+}
+
+main div img{
+    width: 60%;
 }

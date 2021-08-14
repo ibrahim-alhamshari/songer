@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Alboms</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="style.css">
     <link rel="stylesheet" th:href="header.css">
+    <link rel="stylesheet" th:href="footer.css">
 </head>
 <body>
 <header>
@@ -22,7 +23,11 @@
         <p>SongCount: <span th:text="${Album.songCount}"></span></p>
         <p>length : <span th:text="${Album.length}"></span></p>
        <img th:src=${Album.imageUrl} th:alt="${Album.title}" />
+       <hr>
     </div>
 </main>
+<footer>
+    &copy; 2021, Ibrahim_Alhamshari
+</footer>
 </body>
 </html>

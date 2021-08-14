@@ -22,13 +22,13 @@ public class SongController {
 
 
     @GetMapping("/allSongs")
-    public String getAlbums(@PathVariable String id, Model model
-                            ){
-        System.out.println(id);
+    public String getAlbums( Model model){
+//        @PathVariable(value = "id") Integer id,
+//        System.out.println(id);
         model.addAttribute("listSongs", songInterface.findAll());
 
-        Album album = albumInterface.findById(Integer.parseInt(id)).get();
-        model.addAttribute("listAlbumFinal" , album);
+//        Album album = albumInterface.findById(id).get();
+//        model.addAttribute("listAlbumFinal" , album);
         return "songs.html";
     }
 
@@ -49,6 +49,6 @@ public class SongController {
     Song song = new Song(title, length,trackNumber , album);
     songInterface.save(song);
 
-    return new RedirectView("/allSongs?id="+ albumId);
+    return new RedirectView("/allSongs");
 }
 }
