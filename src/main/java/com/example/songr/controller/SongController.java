@@ -23,17 +23,10 @@ public class SongController {
 
     @GetMapping("/allSongs")
     public String getAlbums( Model model){
-//        @PathVariable(value = "id") Integer id,
-//        System.out.println(id);
         model.addAttribute("listSongs", songInterface.findAll());
-
-//        Album album = albumInterface.findById(id).get();
-//        model.addAttribute("listAlbumFinal" , album);
         return "songs.html";
     }
-
-
-
+    
     @GetMapping("/songs")
     public String getSong(){
         return "songs.html";

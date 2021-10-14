@@ -23,13 +23,11 @@ class SongrApplicationTests {
 
 	}
 
-	@Test
-	void setterTest(){
-		Album album = new Album("Thriller" , "Michael Jackson", 42 , 50 , "https://image.jpg");
-		assertEquals("Mohammad",album.setArtist("Mohammad") );
-
-
-	}
+//	@Test
+//	void setterTest(){
+//		Album album = new Album("Thriller" , "Michael Jackson", 42 , 50 , "https://image.jpg");
+//		assertEquals("Mohammad", album.setArtist("Mohammad") );
+//	}
 
 	@Test
 	void settersTesting(){

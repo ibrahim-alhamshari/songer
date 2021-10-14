@@ -72,7 +72,6 @@ public class Song {
     }
 
     public void setSongAlbum(Album songAlbum) {
-
         this.songAlbum = songAlbum;
     }
 }

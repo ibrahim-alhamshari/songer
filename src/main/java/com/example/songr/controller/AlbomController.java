@@ -2,15 +2,16 @@ package com.example.songr.controller;
 
 import com.example.songr.Album;
 import com.example.songr.AlbumInterface;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.github.tsohr.CDL;
+import com.github.tsohr.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
-@Controller
+@CrossOrigin(origins = "http://localhost:3000")
+@RestController
 public class AlbomController {
 
     @Autowired
@@ -29,9 +30,28 @@ public class AlbomController {
         Album album = new Album();
 
         model.addAttribute("listAlbum", albumInterface.findAll());
+
+        System.out.println(albumInterface.findAll());
         return "alboms.html";
     }
 
+    @JsonIgnore
+    @GetMapping("/data")
+    public String getData(){
+//        System.out.println("A request is sent by ReactJs ");
+        StringBuilder builder = new StringBuilder("artist, title, img, length \n");
+
+        for (Album album : albumInterface.findAll()) {
+        builder.append(album.getArtist()).append(", ")
+                .append(album.getTitle()).append(", ")
+                .append(album.getImageUrl()).append(", ")
+                .append(album.getLength()).append("\n");
+        }
+        JSONArray jsonArray= CDL.toJSONArray(String.valueOf(builder));
+//        System.out.println(jsonArray);
+
+        return jsonArray.toString();
+    }
 
     @GetMapping("/dataForm")
     public String getFromForm(){
@@ -40,7 +60,7 @@ public class AlbomController {
 
     @PostMapping("/saveAlbum")
     public RedirectView saveToDataBase(@ModelAttribute Album album , Model model){
-       model.addAttribute("album", album );
+       model.addAttribute("album", album);
       albumInterface.save(album);
 //        System.out.println("====================="+album.getId());
         return new RedirectView("/albums");
